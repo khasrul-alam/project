@@ -1,4 +1,4 @@
-int findLow(int ara[],int n)
+int findLow(vector<int> ara,int n)
 {
     int x=ara[0];
     for(int i=0; i<n; i++)
