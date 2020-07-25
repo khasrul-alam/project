@@ -1,4 +1,15 @@
-void pearson(int x[],int y[],int n)
+#include<bits/stdc++.h>
+using namespace std;
+double mean(vector<double> numbers,int n)
+{
+    double sum = 0, mean;
+    for(int i=0; i<n; i++)
+        sum = sum + numbers[i];
+
+    mean = sum/n;
+    return mean;
+}
+void pearson(vector<double> x,vector<double> y,int n)
 {
     double x_mean=mean(x,n),y_mean=mean(y,n),X=0,Y=0,Z=0;
     for(int i=0;i<n;i++)
@@ -10,7 +21,7 @@ void pearson(int x[],int y[],int n)
     Y=sqrt(Y);
     Z=sqrt(Z);
     double r= X/(Y*Z);
-    printf("Corelation coefficient: %lf\n",r);
+    printf("Corelation coefficient:",r); cout<<r<<endl;
     printf("This indicates a ");
     if(r>0)
         cout<<"positively ";
@@ -27,4 +38,10 @@ void pearson(int x[],int y[],int n)
     else
         cout<<"Very low";
     printf(" between the variable\n");
+}
+int main()
+{
+    vector<double> ara{1,2,3,4,5},bra{2,5,2,9,6};
+
+    pearson(ara,bra,5);
 }
