@@ -6,5 +6,6 @@ This repository contains codes from algorithm lab project
 3. Mean, Median, Mode
 4. find largest from array
 5. find lowest from array
-6. Range , mean deviation, variance,standard deviation, coefficient of veriance
+6. Range , mean deviation, variance,standard deviation,  coefficient of veriance
 7. Karl Pearson’s Correlation Coefficient
+8. Quartile, Decile, Percentile
