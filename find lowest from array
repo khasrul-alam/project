@@ -1,0 +1,7 @@
+int findLow(int ara[],int n)
+{
+    int x=ara[0];
+    for(int i=0; i<n; i++)
+        x=min(x,ara[i]);
+    return x;
+}
