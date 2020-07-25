@@ -1,7 +1,23 @@
-void graph(int X[],int Y[],int ara_size)
+
+#include<bits/stdc++.h>
+using namespace std;
+int findHigh(vector<int> ara,int n)
+{
+    int x=ara[0];
+    for(int i=0; i<n; i++)
+        x=max(x,ara[i]);
+    return x;
+}
+int findLow(vector<int> ara,int n)
+{
+    int x=ara[0];
+    for(int i=0; i<n; i++)
+        x=min(x,ara[i]);
+    return x;
+}
+void graph(vector<int> X,vector<int> Y,int n)
 {
     int i,j,k,lowX=findLow(X,n),highX=findHigh(X,n),lowY=findLow(Y,n),highY=findHigh(Y,n),xx,yy;
-    int n=ara_size;
     int ara[13][13];
     int x=(highX-lowX),y=(highY-lowY);
     for(i=0;i<13;i++)
@@ -38,4 +54,10 @@ void graph(int X[],int Y[],int ara_size)
         cout<<endl;
     }
 }
+int main()
+{
+    //int x[]= {14,16,12,15,18,22,19,25,23,18,23,17},y[]= {215,325,184,332,406,522,412,614,544,421,445,408};
+   vector<int> x{1,2,3,4,5,6,7,8,9,10,11,12},y{1,2,3,4,5,6,7,8,9,10,11,12};
+    graph(x,y,sizeof(x));
 
+}
