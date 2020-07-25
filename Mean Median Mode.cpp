@@ -1,5 +1,27 @@
 #include<bits/stdc++.h>
 using namespace std;
+double calculateMode(vector<double> & numbers, int n)
+{
+    int mode = 0;
+    double val=0;
+    map<int, int> freq;
+    for(int i=0; i<n; i++)
+    {
+        freq[numbers[i]]++;
+    }
+    for(int i=0; i<n; i++)
+    {
+        if(freq[numbers[i]]>1)
+        {
+            if(mode<freq[numbers[i]])
+            {
+                mode = freq[numbers[i]];
+                 val = numbers[i];
+            }
+        }
+    }
+   return val;
+}
 
 double calculateMedian(vector<double> & numbers, int n)
 {
@@ -52,8 +74,10 @@ int main()
 
     double mean = calculateMean(numbers,n);
     double median = calculateMedian(numbers,n);
+    double mode = calculateMode(numbers,n);
     cout<<"The mean of this list is: "<<mean<<endl;
     cout<<"The median of this list is: "<<median<<endl;
+    cout<<"The mode of this list is: "<<mode<<endl;
 
     return 0;
 }
