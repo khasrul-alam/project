@@ -49,10 +49,14 @@ double variance(vector<int> ara)
 
     return x;
 }
-void standard_deviation(vector<int> ara)
+double standard_deviation(vector<int> ara)
 {
     double x=variance(ara);
-    cout<<"Standard deviation: "<<sqrt(x)<<endl;
+    return sqrt(x);
+}
+double CV(vector<int> ara)
+{
+   return (standard_deviation(ara)*100)/calculateMean(ara);
 }
 int main()
 {
@@ -60,6 +64,7 @@ int main()
     range(ara);
     mean_deviation(ara);
     cout<<"variance:"<<variance(ara)<<endl;
-    standard_deviation(ara);
+    cout<<"Standard deviation:"<<standard_deviation(ara)<<endl;
+    cout<<"Coefficient of variation fro population: "<<CV(ara)<<endl;
 
 }
